@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
+// use components to make the code less repetetive =>> create a second react component: file named "colorchangebutton.js"
 function App() {
   const [color, setColor] = useState("");
   // console.log(color, setColor);
