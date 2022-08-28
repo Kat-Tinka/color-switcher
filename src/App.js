@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import "./App.css";
 
-// after coloring buttons , add functionality onto the external div with className "react-root": by adding the class red to the red button, "blue" to the blue button etc if I click the  red/ blue/ green button => so I use here STATE ( => state isany data that changes over the course of the applicaation running) & REACT HOOKS ( write components using functions (instead of needing to use classes or objects)
-// HOOKS are functions that  allow to hook into react features (added on top of app component)
-
 function App() {
-  // use array destructuring=>  store these two array items in different variables( color, setColor in const and in clg)
-  const [color, setColor] = useState("yellow");
-  // consoloe .log to see , what "color" is=> it's an array with 2 items in it: the first one is undefined and the second is a function
-  // so the first item is the current value in state, so whatever color is set to at the moment and then the function is going to allow us to update state and set the color variable to different color
-  console.log(color, setColor);
+  const [color, setColor] = useState("");
+  // console.log(color, setColor);
   return (
-    <div className="react-root">
-      {/* center the content on the page */}
+    // I want to plug the color var into the classname "react-root by telling react that I am writing javascript code by putting curly braces around this variable-> so I can add this color varaiblae to the react root_> which will be included to the string
+    <div className={"react-root " + color}>
       <div className="centered">
-        {/* header to title the page */}
         <h1>Color Picker</h1>
-        {/* three buttons with classNames */}
-        <button className="red">red</button>
-        <button className="blue">blue</button>
-        <button className="green">green</button>
+        {/* add functionality-> onClick and curly braces to say , this is java script code and pass an arrowfunction that calls the setColor function with red , etc */}
+        <button className="red" onClick={() => setColor("red")}>
+          red
+        </button>
+        <button className="blue" onClick={() => setColor("blue")}>
+          blue
+        </button>
+        <button className="green" onClick={() => setColor("green")}>
+          green
+        </button>
       </div>
     </div>
   );

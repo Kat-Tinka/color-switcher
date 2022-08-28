@@ -1,8 +1,3 @@
-/* clear up the existing code */
-/* /html body root and react should take up the height and width of the page *
-/* 
-use flex-box to center the whole element */
-
 html,
 body,
 #root,
@@ -14,12 +9,10 @@ body,
   align-items: center;
 }
 
-/* center div is centered onn page */
 .centered {
   text-align: center;
 }
 
-/* BUTTONS -  */
 button {
   padding: 50px;
   margin: 15px;
@@ -28,7 +21,6 @@ button {
   font-size: 20px;
 }
 
-/* color each button seperately */
 .red {
   background-color: red;
   color: white;
