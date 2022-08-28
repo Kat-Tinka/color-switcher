@@ -1,26 +1,22 @@
 import React, { useState } from "react";
+import ColorChangeButton from "./colorchangebutton";
 import "./App.css";
 
-// use components to make the code less repetetive =>> create a second react component: file named "colorchangebutton.js"
+// import created colorChangebtn-file and add  the button*3 after <h1>
+// replace the oroginal btns with the new ones-> so  their colors and the setColor functionality should work here=> by using PROPS =< PROPS is data that is passed from component to the component in react (=> color="red"/ etc.)
+// when I check now the props in the console=> I see the color for each button and also the setColor function
 function App() {
   const [color, setColor] = useState("");
   // console.log(color, setColor);
   return (
-    // I want to plug the color var into the classname "react-root by telling react that I am writing javascript code by putting curly braces around this variable-> so I can add this color varaiblae to the react root_> which will be included to the string
     <div className={"react-root " + color}>
       <div className="centered">
         <h1>Color Picker</h1>
-        {/* add functionality-> onClick and curly braces to say , this is java script code and pass an arrowfunction that calls the setColor function with red , etc */}
-        <button className="red" onClick={() => setColor("red")}>
-          red
-        </button>
-        <button className="blue" onClick={() => setColor("blue")}>
-          blue
-        </button>
-        <button className="green" onClick={() => setColor("green")}>
-          green
-        </button>
+        <ColorChangeButton color="red" setColor={setColor} />
+        <ColorChangeButton color="blue" setColor={setColor} />
+        <ColorChangeButton color="green" setColor={setColor} />
       </div>
+      {/* the "old buttons " are deleted now */}
     </div>
   );
 }
